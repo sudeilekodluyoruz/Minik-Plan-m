@@ -1,5 +1,4 @@
-# 🌸 Minik 
-Planım
+# 🌸 Minik Planım
 
 > Yoğun bir tempoda eğitimlerini, bootcamp'lerini, etkinliklerini ve günlük görevlerini takip etmek için geliştirdiğim kişisel planlama uygulaması.
 
