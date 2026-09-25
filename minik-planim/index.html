@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf7ff">
+  <title>Minik Planım | Öğrenci Takvimi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="uygulama">
+    <div class="pencere">
+      <header class="ust-menu">
+        <div class="marka">
+          <span class="logo">🌷</span>
+          <div>
+            <b>minik planım</b>
+            <small>küçük adımlar, güzel hedefler</small>
+          </div>
+        </div>
+
+        <div class="ust-aksiyon">
+          <span class="gun-ozeti" id="miniOzet"></span>
+          <button id="ekleButonu" class="ana-buton">＋ Yeni plan</button>
+        </div>
+      </header>
+
+      <div class="sayfa-icerik">
+        <main class="takvim-alani">
+          <div class="ay-basligi">
+            <div>
+              <span class="ust-etiket">PLANLAYICIM</span>
+              <h1 id="ayYazisi"></h1>
+            </div>
+            <div class="ay-gecisleri">
+              <button id="oncekiAy" aria-label="Önceki ay">‹</button>
+              <button id="bugunButonu" aria-label="Bugüne git">Bugün</button>
+              <button id="sonrakiAy" aria-label="Sonraki ay">›</button>
+            </div>
+          </div>
+
+          <div class="hafta-gunleri">
+            <span>Pzt</span>
+            <span>Sal</span>
+            <span>Çar</span>
+            <span>Per</span>
+            <span>Cum</span>
+            <span>Cmt</span>
+            <span>Paz</span>
+          </div>
+          <div id="takvim" class="takvim"></div>
+
+          <section class="yaklasan">
+            <div class="bolum-baslik">
+              <div>
+                <span class="ust-etiket">AJANDAM</span>
+                <h2>Yaklaşanlar</h2>
+              </div>
+              <span class="sayac" id="yaklasanSayisi">0 plan</span>
+            </div>
+            <div id="yaklasanListe" class="yaklasan-liste"></div>
+          </section>
+        </main>
+
+        <aside class="gunluk-plan">
+          <span id="secilenTarih" class="tarih-etiketi"></span>
+          <h2 id="planBasligi">Günün planı</h2>
+          <div id="odakKutusu" class="odak-kutusu"></div>
+          <ul id="planListesi" class="plan-listesi"></ul>
+          <p id="bosMesaj" class="bos-mesaj">
+            Bu gün için henüz bir plan yok. Küçük bir adımla başlayalım mı?
+          </p>
+
+          <section class="not-karti">
+            <div class="bolum-baslik not-baslik">
+              <span>
+                <span class="ust-etiket">KENDİME NOTLAR</span>
+                <b>Günün notları</b>
+              </span>
+              <span class="kayit-durumu" id="notDurumu">0 not</span>
+            </div>
+
+            <form id="notFormu" class="not-formu">
+              <input
+                id="notBasligi"
+                maxlength="45"
+                placeholder="Konu başlığı · örn. Matematik"
+                aria-label="Not konusu"
+                required
+              >
+              <textarea
+                id="notMetni"
+                rows="3"
+                maxlength="500"
+                placeholder="Notunu buraya yaz..."
+                aria-label="Not içeriği"
+                required
+              ></textarea>
+              <button class="not-ekle" type="submit">＋ Not ekle</button>
+            </form>
+
+            <div id="notListesi" class="not-listesi"></div>
+            <small>Notlar seçtiğin güne kaydedilir.</small>
+          </section>
+
+          <section class="yardimci">
+            <div class="yardimci-baslik">
+              <span class="yardimci-ikon">✧</span>
+              <div>
+                <b>Plan yardımcısı</b>
+                <small>Mini fikirler, daha düzenli günler</small>
+              </div>
+            </div>
+            <p class="yardimci-aciklama">
+              Ne çalışacağını yaz, sana küçük bir başlangıç planı önereyim.
+            </p>
+            <textarea
+              id="aiGirdi"
+              rows="2"
+              maxlength="160"
+              placeholder="Örn. Matematik sınavına çalışmam gerek"
+            ></textarea>
+            <button id="aiButonu" class="yardimci-buton">✦ Fikir al</button>
+            <div id="aiCevap" class="ai-cevap" aria-live="polite" hidden></div>
+            <small class="demo-notu">Yerel demo · dış AI servisine bağlanmaz</small>
+          </section>
+        </aside>
+      </div>
+
+      <footer>
+        <span>🌱 Her şey adım adım güzelleşir.</span>
+        <span>Verilerin bu tarayıcıda saklanır.</span>
+      </footer>
+    </div>
+  </div>
+
+  <dialog id="eklemePenceresi">
+    <form id="planFormu">
+      <span class="ust-etiket">AJANDANA EKLE</span>
+      <h2>Yeni plan oluştur ✨</h2>
+
+      <label>
+        Başlık
+        <input id="baslik" required maxlength="60" placeholder="Örn. Python tekrar">
+      </label>
+
+      <div class="form-ikili">
+        <label>
+          Tarih
+          <input id="tarih" type="date" required>
+        </label>
+        <label>
+          Saat
+          <input id="saat" type="time">
+        </label>
+      </div>
+
+      <label>
+        Tür
+        <select id="tur">
+          <option value="study">📚 Ders / çalışma</option>
+          <option value="event">📌 Etkinlik</option>
+          <option value="personal">🌼 Kişisel</option>
+        </select>
+      </label>
+
+      <label class="hatirlatma-sec">
+        <input id="hatirlatma" type="checkbox">
+        <span>
+          <b>Hatırlatıcı kur</b>
+          <small>Etkinlik saatinde tarayıcı bildirimi göster</small>
+        </span>
+      </label>
+
+      <div class="form-butonlari">
+        <button id="iptalButonu" class="iptal" type="button">Vazgeç</button>
+        <button class="ana-buton" type="submit">Planı kaydet</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="bildirimBilgisi" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
