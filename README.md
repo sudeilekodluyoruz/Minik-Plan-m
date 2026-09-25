@@ -1,56 +1,49 @@
-# 🌸 Minik Planım
+# Minik Planım 🌷
 
-> Yoğun bir tempoda eğitimlerini, bootcamp'lerini, etkinliklerini ve günlük görevlerini takip etmek için geliştirdiğim kişisel planlama uygulaması.
+Minik Planım, öğrencilerin derslerini, günlük notlarını ve etkinliklerini tek bir yerde düzenleyebilmesi için hazırlanmış basit bir takvim uygulamasıdır. HTML, CSS ve JavaScript kullanılarak geliştirilmiştir.
 
-## 📅 Proje Hakkında
+## Özellikler
 
-Son zamanlarda katıldığım farklı bootcamp'ler, eğitimler, etkinlikler ve günlük sorumluluklar arttıkça bunları tek bir yerde takip etme ihtiyacı duydum.
+- Ay görünümünde takvim ve gün seçimi
+- Ders, etkinlik ve kişisel plan ekleme
+- Planları tamamlandı olarak işaretleme veya silme
+- Seçilen güne birden fazla başlıklı not ekleme, düzenleme ve silme
+- Yaklaşan planları görüntüleme
+- Hatırlatıcı seçeneği ve tarayıcı bildirimi
+- Çalışma düzeni için küçük öneriler veren yerel plan yardımcısı
+- Telefon ve bilgisayar ekranlarına uyumlu görünüm
+- Plan ve notları tarayıcıda saklama
 
-Bu nedenle kendi ihtiyacımdan yola çıkarak **Minik Planım** isimli kişisel takvim uygulamasını geliştirmeye başladım.
+## Nasıl çalıştırılır?
 
-Projenin amacı yalnızca görevleri listelemek değil, aynı zamanda öğrenme sürecini daha düzenli ve takip edilebilir hale getirmek.
+1. Bu projeyi GitHub'dan indirin veya bilgisayarınıza klonlayın.
+2. `index.html` dosyasını bir web tarayıcısında açın.
+3. Takvimde bir gün seçip **Yeni plan** düğmesiyle plan ekleyin.
 
-## ✨ Özellikler
+Uygulama ek kurulum veya paket gerektirmez.
 
-- 📅 Aylık takvim görünümü
-- ➕ Yeni görev ve etkinlik ekleme
-- ⏰ Tarih ve saat belirleme
-- 🎯 Günlük planları takip etme
-- 🌱 Öğrenme sürecini planlama
-- 💻 Kullanıcı dostu arayüz
-- 🚀 Geliştirilmeye açık yapı
+## Hatırlatıcılar hakkında
 
-## 🛠️ Kullanılan Teknolojiler
+Hatırlatıcılar tarayıcı bildirimi kullanır. Bildirim izni istenir ve bildirimin zamanında çıkması için uygulama sayfasının açık kalması gerekir. Tarayıcı bildirimleri desteklemiyorsa plan yine takvime kaydedilir.
+
+## Plan yardımcısı hakkında
+
+Plan yardımcısı, yazılan konuya göre önceden hazırlanmış çalışma fikirleri sunan basit bir yerel demodur. Bir yapay zekâ servisine veya sunucuya bağlanmaz; API anahtarı gerektirmez.
+
+## Veriler nerede saklanır?
+
+Planlar ve notlar tarayıcının `localStorage` alanında saklanır. Bu nedenle bilgiler yalnızca o tarayıcıda ve cihazda görünür. Tarayıcı verileri silinirse kayıtlar da silinebilir. Uygulama verileri bir sunucuya göndermez.
+
+## Kullanılan teknolojiler
 
 - HTML
 - CSS
 - JavaScript
+- Tarayıcı `localStorage` ve bildirim API'si
 
-## 🎯 Projenin Amacı
+## Proje dosyaları
 
-Bu projeyi geliştirirken gerçek hayatta karşılaştığım bir problemi yazılımla çözmeyi ve aynı zamanda frontend geliştirme konusundaki bilgilerimi geliştirmeyi hedefliyorum.
-
-Proje geliştikçe yeni özellikler eklemeye devam edeceğim.
-
-## 🚀 Gelecek Geliştirmeler
-
-- 🔔 Hatırlatıcı ve bildirim sistemi
-- 💾 Daha gelişmiş veri saklama
-- 📊 Günlük / haftalık ilerleme takibi
-- 🎨 Tema seçenekleri
-- 📱 Mobil uyumluluğun geliştirilmesi
-- 🔐 Kullanıcı hesap sistemi
-
-## 🤝 Katkıda Bulunma
-
-Proje geliştirmeye açıktır.
-
-Fikirlerinizi, geliştirme önerilerinizi veya katkılarınızı GitHub üzerinden paylaşabilirsiniz.
-
-## 👩‍💻 Geliştirici
-
-**Sude Nur Kılıç**
-
-Bilgisayar Programcılığı Mezunu | Yazılım Geliştirme
-
-🔗 GitHub: https://github.com/sudeilekodluyoruz
+- `index.html` — sayfanın içeriği
+- `style.css` — görünüm ve mobil uyum
+- `app.js` — takvim, plan, not ve hatırlatıcı işlevleri
+- `README.md` — proje açıklaması
